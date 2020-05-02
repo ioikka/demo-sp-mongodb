@@ -1,0 +1,28 @@
+2020-05-03 01:32:58,214 INFO org.springframework.boot.StartupInfoLogger [main] Starting App on i72 with PID 8008 (D:\git\github\io\ikka\demo-sp-mongodb\target\classes started by ikka in D:\git\github\io\ikka\demo-sp-mongodb)
+2020-05-03 01:32:58,225 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-05-03 01:32:58,226 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-05-03 01:32:59,214 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-05-03 01:32:59,397 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 171ms. Found 1 MongoDB repository interfaces.
+2020-05-03 01:33:01,609 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[192.168.99.100:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-05-03 01:33:01,609 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Adding discovered server 192.168.99.100:27017 to client view of cluster
+2020-05-03 01:33:01,720 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5eadf51dae388d24c6b5dbb8', description='null'}-192.168.99.100:27017] Opened connection [connectionId{localValue:1, serverValue:52}] to 192.168.99.100:27017
+2020-05-03 01:33:01,750 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5eadf51dae388d24c6b5dbb8', description='null'}-192.168.99.100:27017] Monitor thread successfully connected to server with description ServerDescription{address=192.168.99.100:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 6]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8402000}
+2020-05-03 01:33:01,753 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5eadf51dae388d24c6b5dbb8', description='null'}-192.168.99.100:27017] Discovered cluster type of STANDALONE
+2020-05-03 01:33:02,076 WARN org.springframework.data.mongodb.core.index.JustOnceLogger [main] Automatic index creation will be disabled by default as of Spring Data MongoDB 3.x.
+	Please use 'MongoMappingContext#setAutoIndexCreation(boolean)' or override 'MongoConfigurationSupport#autoIndexCreation()' to be explicit.
+	However, we recommend setting up indices manually in an application ready block. You may use index derivation there as well.
+
+	> -----------------------------------------------------------------------------------------
+	> @EventListener(ApplicationReadyEvent.class)
+	> public void initIndicesAfterStartup() {
+	>
+	>     IndexOperations indexOps = mongoTemplate.indexOps(DomainType.class);
+	>
+	>     IndexResolver resolver = new MongoPersistentEntityIndexResolver(mongoMappingContext);
+	>     resolver.resolveIndexFor(DomainType.class).forEach(indexOps::ensureIndex);
+	> }
+	> -----------------------------------------------------------------------------------------
+
+2020-05-03 01:33:02,141 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Opened connection [connectionId{localValue:2, serverValue:53}] to 192.168.99.100:27017
+2020-05-03 01:33:02,495 INFO org.springframework.boot.StartupInfoLogger [main] Started App in 5.842 seconds (JVM running for 7.333)
+2020-05-03 01:33:02,510 INFO com.mongodb.diagnostics.logging.SLF4JLogger [SpringContextShutdownHook] Closed connection [connectionId{localValue:2, serverValue:53}] to 192.168.99.100:27017 because the pool has been closed.
